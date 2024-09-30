@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Carros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Carros Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Propietario</th>
+                    <th>Teléfono</th>
+                    <th>Placa</th>
+                    <th>Tipo de Carro</th>
+                    <th>Color</th>
+                    <th>Lavador</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for carro in carros %}
+                <tr>
+                    <td>{{ carro.propietario }}</td>
+                    <td>{{ carro.telefono }}</td>
+                    <td>{{ carro.placa }}</td>
+                    <td>{{ carro.tipo_carro }}</td>
+                    <td>{{ carro.color_carro }}</td>
+                    <td>{{ carro.lavador }}</td>
+                    <td>{{ carro.precio }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('logout') }}" class="btn logout">Cerrar Sesión</a>
+    </div>
+</body>
+</html>

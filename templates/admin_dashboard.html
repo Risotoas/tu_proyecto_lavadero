@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Administración</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Dashboard de Administración</h2>
+
+        <!-- Formulario para ingresar lavadores -->
+        <h3>Registrar Lavadores</h3>
+        <form action="{{ url_for('admin_dashboard') }}" method="POST">
+            <label for="cantidad">Cantidad de lavadores:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" required>
+
+            <div id="lavadores_input"></div>
+
+            <button type="submit" class="btn">Registrar Lavadores</button>
+        </form>
+
+        <!-- Script para generar dinámicamente los campos para los lavadores -->
+        <script>
+            document.getElementById('cantidad').addEventListener('input', function() {
+                const cantidad = parseInt(this.value);
+                const lavadoresInput = document.getElementById('lavadores_input');
+                lavadoresInput.innerHTML = '';
+                for (let i = 0; i < cantidad; i++) {
+                    lavadoresInput.innerHTML += `
+                        <label for="lavador_${i+1}">Nombre del lavador ${i+1}:</label>
+                        <input type="text" id="lavador_${i+1}" name="lavador_${i+1}" required>
+                    `;
+                }
+            });
+        </script>
+
+        <h3>Opciones</h3>
+        <a href="{{ url_for('registro_carro') }}" class="btn">Registrar Carros</a>
+        <a href="{{ url_for('reporte') }}" class="btn">Ver Reporte</a>
+        <a href="{{ url_for('logout') }}" class="btn logout">Cerrar Sesión</a>
+    </div>
+</body>
+</html>

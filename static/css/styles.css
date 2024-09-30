@@ -1,0 +1,113 @@
+/* Tipografía general */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+h2, h3 {
+    font-size: 18px;
+    color: #3a3a3c;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #7c7c7c;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d1d6;
+    border-radius: 12px;
+    background-color: #f2f2f7;
+    color: #3a3a3c;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #007aff;
+    background-color: #ffffff;
+}
+
+.btn, .btn-primary, .btn-secondary {
+    padding: 12px 15px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007aff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #005db3;
+}
+
+.btn-secondary {
+    background-color: #f2f2f7;
+    color: #007aff;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.vehiculos-list {
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #d1d1d6;
+}
+
+.vehiculos-list div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.clock {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.settings {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.settings .btn-secondary {
+    margin: 10px;
+}

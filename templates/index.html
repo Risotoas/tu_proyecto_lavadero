@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Jornada</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar Jornada</h1>
+
+        <div class="form-section">
+            <label for="car-type">Tipo de Carro:</label>
+            <input type="text" id="car-type" name="car-type" placeholder="SUV, Sedan, etc.">
+
+            <label for="car-color">Color del Carro:</label>
+            <input type="text" id="car-color" name="car-color" placeholder="Rojo, Azul, etc.">
+
+            <label for="license-number">Número de Placa:</label>
+            <input type="text" id="license-number" name="license-number" placeholder="ABC123">
+        </div>
+
+        <h2>Lavadores</h2>
+        <div class="lavadores">
+            <input type="text" id="lavador-1" placeholder="Nombre del Lavador 1">
+            <input type="text" id="lavador-2" placeholder="Nombre del Lavador 2">
+            <input type="text" id="lavador-3" placeholder="Nombre del Lavador 3">
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="finalizarJornada()">Finalizar Jornada</button>
+            <button class="btn-primary" onclick="iniciarJornada()">Iniciar</button>
+        </div>
+
+        <h3>Vehículos Registrados</h3>
+        <div id="vehiculos-list" class="vehiculos-list"></div>
+
+        <div class="settings">
+            <button class="btn-secondary" onclick="verVehiculos()">Ver Vehículos</button>
+            <button class="btn-secondary" onclick="ajustes()">Ajustes</button>
+        </div>
+
+        <div class="clock">
+            <span>12:00</span>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

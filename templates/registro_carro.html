@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Carro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Registrar un Carro</h2>
+        <form action="{{ url_for('registro_carro') }}" method="POST">
+            <label for="propietario">Nombre del propietario:</label>
+            <input type="text" id="propietario" name="propietario" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <label for="placa">Placa del carro:</label>
+            <input type="text" id="placa" name="placa" maxlength="6" required>
+
+            <label for="tipo_carro">Tipo de carro:</label>
+            <input type="text" id="tipo_carro" name="tipo_carro" required>
+
+            <label for="color_carro">Color del carro:</label>
+            <input type="text" id="color_carro" name="color_carro" required>
+
+            <label for="lavador">Lavador:</label>
+            <input type="text" id="lavador" name="lavador" required>
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" required>
+
+            <button type="submit" class="btn">Registrar Carro</button>
+        </form>
+
+        <!-- Mostrar los carros registrados debajo del formulario -->
+        <h3>Carros Registrados</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Propietario</th>
+                    <th>Teléfono</th>
+                    <th>Placa</th>
+                    <th>Tipo de Carro</th>
+                    <th>Color</th>
+                    <th>Lavador</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for carro in carros %}
+                <tr>
+                    <td>{{ carro.propietario }}</td>
+                    <td>{{ carro.telefono }}</td>
+                    <td>{{ carro.placa }}</td>
+                    <td>{{ carro.tipo_carro }}</td>
+                    <td>{{ carro.color_carro }}</td>
+                    <td>{{ carro.lavador }}</td>
+                    <td>{{ carro.precio }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('logout') }}" class="btn logout">Cerrar Sesión</a>
+    </div>
+</body>
+</html>
